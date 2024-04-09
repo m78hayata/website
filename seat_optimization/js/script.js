@@ -315,10 +315,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('seatingForm').addEventListener('submit', function(event) {
         event.preventDefault();
-        // 結果欄に「計算中...」を表示
-        const resultDiv = document.getElementById('result');
-        resultDiv.innerHTML = '';
-        resultDiv.innerHTML = '計算中...';
         // フォーム送信時の処理
         const mode = document.getElementById('modeSelect').value; // モードの選択状態を取得
         const people = collectPeopleData();
@@ -341,6 +337,10 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         const affinityMatrix = generateAffinityMatrix(people, goodPairs, badPairs, mode);
+        // 結果欄に「計算中...」を表示
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = '';
+        resultDiv.innerHTML = '計算中...';
         // 計算処理を非同期で実行する場合（例: setTimeoutを使用して非同期処理のシミュレート）
         setTimeout(() => {
             const initialSolution = createInitialSolution(people, tables);
