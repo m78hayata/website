@@ -40,16 +40,16 @@
             <div class="mb-3">
                 <label for="modeSelect" class="form-label">最適化モード選択</label>
                 <select id="modeSelect" class="form-select">
-                    <option value="minimize_department">同じ部署で集まりたい！</option>
+                    <option value="minimize_department">同じ所属で集まりたい！</option>
                     <option value="minimize_career">年次の近い人同士で固まりたい！</option>
                     <option value="maximize">まだ仲良くない人との仲を深めたい！</option>
                     <option value="random">ランダムに決めたい！</option>
                 </select>
                 <section class="section">
                     <p>
-                        <strong>同じ部署で集まりたい！</strong>：同じ部署の人が同じグループになりやすいモード<span style="color: red;">(おすすめ)</span><br>
+                        <strong>同じ所属で集まりたい！</strong>：同じ所属の人が同じグループになりやすいモード<span style="color: red;">(おすすめ)</span><br>
                         <strong>年次の近い人同士で固まりたい！</strong>：年次の近い人が同じグループになりやすいモード<br>
-                        <strong>まだ仲良くない人との仲を深めたい！</strong>：違う部署・年次の離れた人同士が同じグループになりやすいモード<span style="color: blue;">(懇親会などに)</span><br>
+                        <strong>まだ仲良くない人との仲を深めたい！</strong>：違う所属・年次の離れた人同士が同じグループになりやすいモード<span style="color: blue;">(懇親会などに)</span><br>
                     </p>
                 </section>
             </div>
@@ -126,7 +126,7 @@
             const participantHTML = `
             <div class="participant-input input-group">
                 名前: <input type="text" name="name${newIndex}" required>
-                部署: <input type="text" name="department${newIndex}" required>
+                所属: <input type="text" name="department${newIndex}" required>
                 年次: <input type="number" name="career${newIndex}" min="0" required>
                 <button type="button" class="delete-button" onclick="this.parentNode.remove(); updateParticipantCount();">✕</button>
             </div>
@@ -170,7 +170,7 @@
                     const person1 = people[i];
                     const person2 = people[j];
 
-                    // 部署が異なる場合のスコア
+                    // 所属が異なる場合のスコア
                     if (person1.department !== person2.department) {
                         matrix[i][j] += department_cost;
                     }
@@ -420,6 +420,12 @@
                 const goodPairs = collectGoodPairs();
                 const badPairs = collectBadPairs();
                 const { tables } = collectTableData();
+                // テーブルキャパシティの合計が参加者数より小さい場合、エラーメッセージを表示
+                const totalCapacity = tableCapacities.reduce((acc, val) => acc + val, 0);
+                if (totalCapacity < people.length) {
+                    resultDiv.innerHTML = 'エラー: グループの合計人数が参加者数の合計より小さいです';
+                    return;
+                }
                 const affinityMatrix = generateAffinityMatrix(people, goodPairs, badPairs, mode);
                 // 計算処理を非同期で実行する場合（例: setTimeoutを使用して非同期処理のシミュレート）
                 setTimeout(() => {
