@@ -71,7 +71,7 @@ h1, h5 {
     align-items: center; /* 垂直方向の中央揃え */
 }
 .button-container button {
-    margin: 10px; /* ボタン間の余白 */
+    margin: 0.5rem; /* ボタン間の余白 */
 }
 
 /* ボタンのホバー効果 */
