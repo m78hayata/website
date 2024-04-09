@@ -63,6 +63,7 @@ h1, h5 {
     margin: 0.5rem; /* ボタン間の余白 */
     border-radius: 20px; /* ボタンの角を丸くする */
     padding: 0.5rem 1.5rem; /* ボタンのパディング */
+    align-items: center; /* 垂直方向の中央揃え */
 }
 
 /* ボタンのホバー効果 */
