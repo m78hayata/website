@@ -63,7 +63,16 @@ h1, h5 {
     margin: 0.5rem; /* ボタン間の余白 */
     border-radius: 20px; /* ボタンの角を丸くする */
     padding: 0.5rem 1.5rem; /* ボタンのパディング */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* 水平方向の中央揃え */
     align-items: center; /* 垂直方向の中央揃え */
+    height: 100vh; /* コンテナの高さをビューポートの高さに合わせる */
+}
+.button-container button {
+    margin: 10px; /* ボタン間の余白 */
 }
 
 /* ボタンのホバー効果 */
@@ -180,8 +189,7 @@ header, footer {
         min-width: 50px; /* 入力欄の最小幅を指定 */
     }
 
-    .button-group {
-        display: flex;
+    .button-container {
         flex-direction: column; /* スマートフォン表示ではボタンを縦に並べる */
     }
 
