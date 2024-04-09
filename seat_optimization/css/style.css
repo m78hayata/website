@@ -101,6 +101,67 @@ header, footer {
     line-height: 1.6;
 }
 
+/* ナビゲーションリンクの基本スタイル */
+.nav-link {
+    color: #666; /* 通常時は少し暗い色 */
+    margin-right: 20px; /* ナビゲーションリンク間の余白を設定 */
+    position: relative;
+    text-decoration: none; /* 下線を消去 */
+    transition: color 0.3s; /* 色の変化を滑らかに */
+}
+
+/* ホバー時とアクティブ時のスタイル */
+.nav-link:hover, .nav-link.active {
+    color: #fff; /* フォントの色を白に */
+}
+
+.nav-link::after, .nav-link.active::after {
+    background-color: #fff; /* 下線の色を白に */
+}
+
+.nav-link::after, .nav-link:hover::after, .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s, left 0.3s;
+}
+
+.nav-link:hover::after, .nav-link.active::after {
+    width: 100%;
+    left: 0;
+}
+
+.navbar {
+    background-color: #333 !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    animation: fadeInUpToCenter 1.2s ease-out; /* アニメーションを適用 */
+    color: white;
+}
+
+@keyframes fadeInUpToCenter {
+    from {
+      transform: translate(-50%, -40%); /* 中心から少し下にオフセット */
+      opacity: 0; /* 完全に透明 */
+    }
+    to {
+      transform: translate(-50%, -50%); /* 正確に中央に */
+      opacity: 1; /* 完全に不透明 */
+    }
+}
+
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
     /* スマートフォン表示時のスタイリング */
