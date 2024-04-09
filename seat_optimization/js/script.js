@@ -332,6 +332,14 @@ document.addEventListener('DOMContentLoaded', function() {
             resultDiv.innerHTML = 'エラー: グループの合計人数が参加者数より少ないです。';
             return;
         }
+
+        // 参加者の名前が重複しているときにエラーメッセージを表示
+        const nameSet = new Set();
+        people.forEach(person => nameSet.add(person.name));
+        if (nameSet.size !== people.length) {
+            resultDiv.innerHTML = 'エラー: 参加者の名前が重複しています。';
+            return;
+        }
         const affinityMatrix = generateAffinityMatrix(people, goodPairs, badPairs, mode);
         // 計算処理を非同期で実行する場合（例: setTimeoutを使用して非同期処理のシミュレート）
         setTimeout(() => {
