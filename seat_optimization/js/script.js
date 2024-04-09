@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const totalCapacity = tableCapacities.reduce((acc, val) => acc + val, 0);
 
         if (totalCapacity < people.length) {
-            resultDiv.innerHTML = 'エラー: グループの合計人数が参加者数より少ないです。';
+            resultDiv.innerHTML = 'エラー: グループの合計人数が参加者数より少ないです';
             return;
         }
 
@@ -333,7 +333,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const nameSet = new Set();
         people.forEach(person => nameSet.add(person.name));
         if (nameSet.size !== people.length) {
-            resultDiv.innerHTML = 'エラー: 参加者の名前が重複しています。';
+            resultDiv.innerHTML = 'エラー: 参加者の名前が重複しています';
+            return;
+        }
+
+        // グループ数と各グループの人数の長さが一致しない場合、エラーメッセージを表示
+        if (tables.length !== tableCapacities.length) {
+            resultDiv.innerHTML = 'エラー: 各グループの人数を適切に指定してください';
             return;
         }
         const affinityMatrix = generateAffinityMatrix(people, goodPairs, badPairs, mode);
