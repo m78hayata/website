@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://kentahayakawa.com/seat_optimization/explanation.html">
+    <meta property="og:title" content="計算方法 | 飲み会席決め最適化サイト">
+    <meta property="og:description" content="飲み会席決め最適化のアルゴリズム説明">
+    <meta property="og:image" content="images/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="images/icon.jpg">
+    <meta property="twitter:url" content="https://kentahayakawa.com/seat_optimization/explanation.html">
+    <meta property="twitter:title" content="計算方法 | 飲み会席決め最適化サイト">
+    <meta property="twitter:description" content="飲み会席決め最適化のアルゴリズム説明">
+    <meta property="twitter:image" content="images/logo.png">
+
+    <title>計算方法 | 飲み会席決め最適化サイト</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EFJJ8KLLE4"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-EFJJ8KLLE4');
+</script>
+<body>
+    <header class="mb-4">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #333;">
+            <a class="navbar-brand" href="index.html">飲み会席決め最適化サイト</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="howtouse.html">使い方</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="explanation.html">計算方法</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <h1 class="text-center">計算方法の説明</h1>
+        <section>
+            <h2>概要</h2>
+            <p>
+                当サイトでは、メタヒューリスティクスという最適化手法を用いています。メタヒューリスティクスは、複雑な問題に対して近似解を効率的に求めるアルゴリズムの一種で、本サイトでは特に「シミュレーテッドアニーリング法」を採用しています。
+            </p>
+        </section>
+        <section>
+            <h2>シミュレーテッドアニーリング法とは</h2>
+            <p>
+                シミュレーテッドアニーリング法は、金属の冷却過程を模倣したアルゴリズムであり、温度を徐々に下げながら解の探索を行います。この方法により、局所的な最適解に陥ることなく、全体の最適解に近い解を見つけ出すことが可能です。
+            </p>
+            <p>
+                具体的には、席決めの問題において、参加者の好みや関係性を数値化し、それらの総和が最適な状態になるように席配置を調整していきます。この過程で、ランダムに席替えを行い、新しい配置がより好ましい場合にはその配置を採用し、そうでない場合でも一定の確率で採用することで、局所的な最適解から脱却しようとします。
+            </p>
+        </section>
+        <section>
+            <h2>最適化モード</h2>
+            <p>
+                サイトでは以下の最適化モードを提供しています：
+                <ul>
+                    <li><strong>同じ所属で集まりたい！：</strong>同じ所属の人が同じグループになりやすくなります。</li>
+                    <li><strong>年次の近い人同士で固まりたい！：</strong>年次が近い人同士が同じグループになりやすくなります。</li>
+                    <li><strong>まだ仲良くない人との仲を深めたい！：</strong>異なる所属や年次の人同士が同じグループになりやすくなります。</li>
+                    <li><strong>ランダムに決めたい！：</strong>ランダムにグループ分けを行います。</li>
+                </ul>
+            </p>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <footer class="mt-5 py-3 text-center">
+        <p>&copy; 2024 飲み会席決め最適化サイト. All rights reserved.</p>
+    </footer>
+</body>
+</html>

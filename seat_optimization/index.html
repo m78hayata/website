@@ -33,9 +33,35 @@
     gtag('config', 'G-EFJJ8KLLE4');
 </script>
 <body>
+    <header class="mb-4">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #333;">
+            <a class="navbar-brand" href="index.html">飲み会席決め最適化サイト</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="howtouse.html">使い方</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="explanation.html">計算方法</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <div class="container">
         <h1 class="mb-4">飲み会席決め最適化サイト</h1>
         <h5 class="mb-4">メタヒューリスティクスを用いた数理最適化によって、シーンに合わせた最適な座席割り振りを決定します</h5>
+        <!-- 使い方と計算方法の説明へのリンク -->
+        <div class="button-group text-center mt-4 mb-4">
+            <a href="howtouse.html" class="btn btn-outline-info mr-2">使い方はこちら</a>
+            <a href="explanation.html" class="btn btn-outline-info">計算方法の説明はこちら</a>
+        </div>
         <form id="seatingForm">
             <div class="mb-3">
                 <label for="modeSelect" class="form-label">最適化モード選択</label>
@@ -79,9 +105,13 @@
                 <input type="text" name="table_capacities" class="form-control narrow-input" required>
             </div>
             <p>
+                ☆席順まで考慮した最適な席割りを決定します<br>
+                ☆テーブルの形は円形を想定しています(＝結果に表示された最後の人は最初の人とも隣り合います)<br>
+                ☆計算時間は最大10秒です<br><br>
                 <strong>※注意事項</strong><br>
                 ・参加者の名前は重複しないようにしてください<br>
                 ・グループ数は参加者数より多くすることはできません<br>
+                ・参加者数が多い場合、最適解が求められない可能性があります<br>
             </p>
             <div class="d-grid gap-2 d-md-block">
                 <input type="submit" class="btn btn-success mb-3" value="計算開始">

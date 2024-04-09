@@ -59,6 +59,12 @@ h1, h5 {
     cursor: pointer;
 }
 
+.button-group .btn {
+    margin: 0.5rem; /* ボタン間の余白 */
+    border-radius: 20px; /* ボタンの角を丸くする */
+    padding: 0.5rem 1.5rem; /* ボタンのパディング */
+}
+
 /* ボタンのホバー効果 */
 .delete-button:hover {
     background-color: #bbbbbb;
@@ -78,7 +84,7 @@ h1, h5 {
     border-radius: 20px;
 }
 
-footer {
+header, footer {
     background-color: #333;
     color: white;
     padding: 1rem;
@@ -110,5 +116,15 @@ footer {
     .pair-group input {
         flex: 1; /* スマートフォンでは入力欄の幅を自動調整 */
         min-width: 50px; /* 入力欄の最小幅を指定 */
+    }
+
+    .button-group {
+        display: flex;
+        flex-direction: column; /* スマートフォン表示ではボタンを縦に並べる */
+    }
+
+    .button-group .btn {
+        margin: 0.5rem auto; /* 中央寄せ */
+        width: 80%; /* ボタンの幅 */
     }
 }
