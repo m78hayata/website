@@ -270,6 +270,10 @@
             let temp = initialTemp;
             const startTime = Date.now(); // 計算開始時刻を記録
 
+            // 計算開始前にプログレス表示を初期化
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '計算中... 0%';
+
             for (let i = 0; i < iterations; i++) {
                 // 現在時刻と開始時刻の差が10秒を超えたか確認
                 if (Date.now() - startTime > 10000) {
@@ -302,6 +306,10 @@
                 }
 
                 temp *= coolingRate;
+
+                // イテレーションごとにプログレスを更新
+                const progress = Math.round((i + 1) / iterations * 100);
+                resultDiv.innerHTML = `計算中... ${progress}%`;
             }
             if (mode === "maximize") {
                 bestCost = -bestCost; // コスト最大化の場合、コストを正の値に変換
@@ -423,6 +431,7 @@
                 // テーブルキャパシティの合計が参加者数より小さい場合、エラーメッセージを表示
                 const totalCapacity = tableCapacities.reduce((acc, val) => acc + val, 0);
                 if (totalCapacity < people.length) {
+                    resultDiv.innerHTML = '';
                     resultDiv.innerHTML = 'エラー: グループの合計人数が参加者数の合計より小さいです';
                     return;
                 }
