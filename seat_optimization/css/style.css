@@ -16,11 +16,16 @@ h1, h5 {
     margin-bottom: 1rem;
 }
 
+.ad-container {
+    display: flex;
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    flex-direction: column; /* 広告を縦に並べる */
+    gap: 20px; /* 広告間のスペース */
+}
+
 .ad {
-    /* 中央に揃える */
-    display: block;
-    margin: 0 auto;
-    text-align: center;
+    text-align: center; /* <a>タグ内の<img>を中央揃え */
 }
 
 /* 入力関連のスタイル */
