@@ -27,6 +27,11 @@ h1, h5 {
     text-align: center; /* <a>タグ内の<img>を中央揃え */
 }
 
+/* 小さいサイズの広告はデフォルトで非表示 */
+.small-ad {
+    display: none;
+}
+
 /* 入力関連のスタイル */
 .input-group, .pair-group {
     display: flex;
@@ -184,6 +189,14 @@ header, footer {
 
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
+    /* 広告の表示制御 */
+    .large-ad {
+        display: none; /* 大きいサイズの広告を非表示 */
+    }
+    .small-ad {
+        display: block; /* 小さいサイズの広告を表示 */
+    }
+
     /* スマートフォン表示時のスタイリング */
     .narrow-input {
         max-width: 50%; /* スマートフォン表示では幅を100%に */
