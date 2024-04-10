@@ -13,6 +13,7 @@ body {
 
 h1, h5 {
     text-align: center;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -81,9 +82,12 @@ h1, h5 {
     display: flex;
     justify-content: center; /* 水平方向の中央揃え */
     align-items: center; /* 垂直方向の中央揃え */
+    flex-wrap: wrap; /* コンテンツがコンテナを超えたら折り返す */
 }
-.button-container button {
-    margin: 0.5rem; /* ボタン間の余白 */
+
+.button-container a {
+    margin: 0.5rem; /* ボタン間およびボタンとコンテナ端の余白 */
+    width: auto; /* ボタンの幅を自動調整 */
 }
 
 /* ボタンのホバー効果 */
@@ -213,10 +217,12 @@ header, footer {
 
     .button-container {
         flex-direction: column; /* スマートフォン表示ではボタンを縦に並べる */
-        text-align: center; /* 中央揃えにする */
-        margin: auto; /* 上下左右のマージンを自動調整し、さらに中央揃えの補助をする */
-        display: block; /* ブロックレベル要素として扱い、幅の指定が可能になる */
-        width: 100%; /* コンテナの幅を100%に設定して、内包する広告が中央に来るようにする */
+        margin: 1rem 0; /* 上下のマージンを1remに設定 */
+    }
+
+    .button-container a {
+        width: 90%; /* スマートフォン表示ではボタンの幅を90%に設定 */
+        margin: 0.5rem auto; /* 上下のマージンを0.5rem、左右のマージンを自動にして中央揃え */
     }
 
     .button-group .btn {
