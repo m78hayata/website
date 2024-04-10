@@ -196,6 +196,9 @@ header, footer {
 /* レスポンシブ対応 */
 @media (max-width: 768px) {
     /* 広告の表示制御 */
+    .ad-container {
+        flex-direction: column; /* 広告を縦に並べる */
+    }
     .large-ad {
         display: none; /* 大きいサイズの広告を非表示 */
     }
