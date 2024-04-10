@@ -194,7 +194,7 @@ header, footer {
         display: none; /* 大きいサイズの広告を非表示 */
     }
     .small-ad {
-        display: block; /* 小さいサイズの広告を表示 */
+        display: none; /* 小さいサイズの広告を表示 */
     }
 
     /* スマートフォン表示時のスタイリング */
