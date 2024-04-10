@@ -16,6 +16,13 @@ h1, h5 {
     margin-bottom: 1rem;
 }
 
+.ad {
+    /* 中央に揃える */
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
 /* 入力関連のスタイル */
 .input-group, .pair-group {
     display: flex;
