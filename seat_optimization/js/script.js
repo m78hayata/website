@@ -58,11 +58,11 @@ function generateAffinityMatrix(people, goodPairs, badPairs, mode) {
     const matrix = Array.from({ length: size }, () => Array(size).fill(0));
 
     if (mode == "minimize_department") {
-        department_cost = 300;
+        department_cost = 10000;
         career_cost = 10;
     } else if (mode == "minimize_career") {
         department_cost = 10;
-        career_cost = 1000;
+        career_cost = 10000;
     } else if (mode == "maximize") {
         department_cost = 60;
         career_cost = 60;
@@ -101,7 +101,7 @@ function generateAffinityMatrix(people, goodPairs, badPairs, mode) {
         const index1 = people.findIndex(person => person.name === pair[0]);
         const index2 = people.findIndex(person => person.name === pair[1]);
         if (index1 !== -1 && index2 !== -1) {
-            matrix[index1][index2] = matrix[index2][index1] = -60; // 仲の良いペア
+            matrix[index1][index2] = matrix[index2][index1] = -100; // 仲の良いペア
         }
     });
 
@@ -109,7 +109,7 @@ function generateAffinityMatrix(people, goodPairs, badPairs, mode) {
         const index1 = people.findIndex(person => person.name === pair[0]);
         const index2 = people.findIndex(person => person.name === pair[1]);
         if (index1 !== -1 && index2 !== -1) {
-            matrix[index1][index2] = matrix[index2][index1] = 60; // 仲の悪いペア
+            matrix[index1][index2] = matrix[index2][index1] = 100; // 仲の悪いペア
         }
     });
 
