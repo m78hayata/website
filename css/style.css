@@ -18,3 +18,29 @@ header, footer {
     padding: 0.5rem 1.5rem; /* ボタンのパディング */
     align-items: center; /* 垂直方向の中央揃え */
 }
+
+.ad-container {
+    text-align: center; /* 広告を中央揃えにする */
+    margin: auto; /* 上下左右のマージンを自動調整し、さらに中央揃えの補助をする */
+    display: block; /* ブロックレベル要素として扱い、幅の指定が可能になる */
+    width: 100%; /* コンテナの幅を100%に設定して、内包する広告が中央に来るようにする */
+}
+
+/* 小さいサイズの広告はデフォルトで非表示 */
+.small-ad {
+    display: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    /* 広告の表示制御 */
+    .ad-container {
+        flex-direction: column; /* 広告を縦に並べる */
+    }
+    .large-ad {
+        display: none; /* 大きいサイズの広告を非表示 */
+    }
+    .small-ad {
+        display: block; /* 小さいサイズの広告を表示 */
+    }
+}
