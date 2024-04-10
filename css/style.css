@@ -17,6 +17,9 @@ header, footer {
     border-radius: 20px; /* ボタンの角を丸くする */
     padding: 0.5rem 1.5rem; /* ボタンのパディング */
     align-items: center; /* 垂直方向の中央揃え */
+    text-align: center; /* 広告を中央揃えにする */
+    display: block; /* ブロックレベル要素として扱い、幅の指定が可能になる */
+    width: 100%; /* コンテナの幅を100%に設定して、中央に来るようにする */
 }
 
 .ad-container {

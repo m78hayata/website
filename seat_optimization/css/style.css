@@ -13,7 +13,7 @@ body {
 
 h1, h5 {
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     margin-bottom: 1rem;
 }
 
@@ -79,7 +79,8 @@ h1, h5 {
 }
 
 .button-container {
-    display: flex;
+    display: block; /* ブロックレベル要素として扱い、幅の指定が可能になる */
+    width: 100%; /* コンテナの幅を100%に設定して、内包する広告が中央に来るようにする */
     justify-content: center; /* 水平方向の中央揃え */
     align-items: center; /* 垂直方向の中央揃え */
     flex-wrap: wrap; /* コンテンツがコンテナを超えたら折り返す */
