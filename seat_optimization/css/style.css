@@ -213,6 +213,10 @@ header, footer {
 
     .button-container {
         flex-direction: column; /* スマートフォン表示ではボタンを縦に並べる */
+        text-align: center; /* 中央揃えにする */
+        margin: auto; /* 上下左右のマージンを自動調整し、さらに中央揃えの補助をする */
+        display: block; /* ブロックレベル要素として扱い、幅の指定が可能になる */
+        width: 100%; /* コンテナの幅を100%に設定して、内包する広告が中央に来るようにする */
     }
 
     .button-group .btn {
