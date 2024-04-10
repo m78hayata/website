@@ -17,14 +17,20 @@ h1, h5 {
 }
 
 .ad-container {
-    display: flex;
-    justify-content: center; /* 水平方向の中央揃え */
-    align-items: center; /* 垂直方向の中央揃え */
-    gap: 20px; /* 広告間のスペース */
+    text-align: center; /* 広告を中央揃えにする */
+    margin: auto; /* 上下左右のマージンを自動調整し、さらに中央揃えの補助をする */
+    display: block; /* ブロックレベル要素として扱い、幅の指定が可能になる */
+    width: 100%; /* コンテナの幅を100%に設定して、内包する広告が中央に来るようにする */
 }
 
-.ad {
-    text-align: center; /* <a>タグ内の<img>を中央揃え */
+.ad-container a {
+    display: inline-block; /* リンクをインラインブロック要素として扱い、テキスト中央揃えの対象とする */
+    margin: 0 auto; /* 左右のマージンを自動調整して、中央揃えを実現 */
+}
+
+.ad-container img {
+    max-width: 100%; /* 画像がコンテナを超えないようにする */
+    height: auto; /* 画像の高さを自動調整し、アスペクト比を保持する */
 }
 
 /* 小さいサイズの広告はデフォルトで非表示 */
@@ -194,7 +200,7 @@ header, footer {
         display: none; /* 大きいサイズの広告を非表示 */
     }
     .small-ad {
-        display: none; /* 小さいサイズの広告を表示 */
+        display: block; /* 小さいサイズの広告を表示 */
     }
 
     /* スマートフォン表示時のスタイリング */
